@@ -1,7 +1,13 @@
-import { Container } from "../../components/Container/style";
+import { Main } from "../../components/Main/style";
+import HeaderDashboard from "../../components/Header";
 
 const Dashboard = () => {
-  return <Container></Container>;
+  return (
+    <>
+      <HeaderDashboard />
+      <Main></Main>
+    </>
+  );
 };
 
 export default Dashboard;

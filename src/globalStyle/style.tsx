@@ -141,7 +141,7 @@ section {
 body {
   font-family: var(--font-inter);
   line-height: 1;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   height: 100vh;
   display: flex;
   align-items: center;

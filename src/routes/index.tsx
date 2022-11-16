@@ -10,7 +10,7 @@ const RoutesMain = () => {
       <Routes>
         <Route path="/Register" element={<Singup />} />
         <Route path="/" element={<Login />} />
-        <Route path="/Dashboard/:id" element={<Dashboard />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
       </Routes>
     </AnimatePresence>
   );
