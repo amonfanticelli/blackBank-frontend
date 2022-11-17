@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { FieldError } from "react-hook-form";
-import { Container, Label } from "./styles";
+import { Container, Error } from "./styles";
+import { BiErrorCircle } from "react-icons/bi";
 interface InputProps {
   id: string;
   label: string;
@@ -24,7 +25,7 @@ const Input = forwardRef(
     ref: React.LegacyRef<HTMLInputElement>
   ) => (
     <>
-      <Label htmlFor={id}>{label}</Label>
+      <label htmlFor={id}>{label}</label>
       <Container>
         <input
           id={id}
@@ -34,7 +35,12 @@ const Input = forwardRef(
           ref={ref}
         />
 
-        {error?.message && <span>{error.message}</span>}
+        {error?.message && (
+          <Error>
+            <BiErrorCircle />
+            <span>{error.message}</span>
+          </Error>
+        )}
       </Container>
     </>
   )

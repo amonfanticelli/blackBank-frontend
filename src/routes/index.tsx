@@ -8,9 +8,9 @@ const RoutesMain = () => {
   return (
     <AnimatePresence>
       <Routes>
-        <Route path="/Register" element={<Singup />} />
+        <Route path="/register" element={<Singup />} />
         <Route path="/" element={<Login />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </AnimatePresence>
   );

@@ -6,16 +6,19 @@ import Input from "../../components/Input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "../../schema/registerSchema";
-import { IUserLogin } from "../../interfaces";
+import { IUser } from "../../interfaces";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
 
 const Singup = () => {
+  const { handleRegister } = useContext(UserContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IUserLogin>({
+  } = useForm<IUser>({
     resolver: yupResolver(registerSchema),
   });
 
@@ -27,7 +30,7 @@ const Singup = () => {
       transition={{ duration: 0.4 }}
     >
       <Container>
-        <Form>
+        <Form onSubmit={handleSubmit(handleRegister)}>
           <MainTitle>NG CA$H</MainTitle>
           <Input
             id="username"
@@ -43,10 +46,10 @@ const Singup = () => {
             label="Senha"
             {...register("password")}
             error={errors?.password}
-            type="text"
+            type="password"
           />
 
-          <Button> Registrar</Button>
+          <Button type="submit"> Registrar</Button>
 
           <Link to="/">Clique aqui para voltar a página de login</Link>
         </Form>

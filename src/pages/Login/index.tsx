@@ -48,7 +48,7 @@ const Login = () => {
 
           <Button> Entrar</Button>
           <span>Ainda não possui uma conta? </span>
-          <Link to="/Register"> Cadastre-se</Link>
+          <Link to="/register"> Cadastre-se</Link>
         </Form>
 
         <Img />
