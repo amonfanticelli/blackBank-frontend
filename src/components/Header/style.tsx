@@ -17,19 +17,34 @@ export const Header = styled.header`
   }
 
   button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    gap: 10px;
-    background: var(--color-white);
+    position: relative;
+    padding: 1.4rem 1.1rem;
+    padding-right: 1.1rem;
+    font-size: 1.4rem;
+    color: var(--color-black);
+    letter-spacing: 0.3rem;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    user-select: none;
 
-    border-radius: 10px;
-    cursor: pointer;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      transition: inherit;
+      z-index: -1;
+    }
+
     &:hover {
-      background: purple;
-      color: white;
+      color: red;
+      transition-delay: 0.5s;
+    }
+    &:hover:before {
+      transition-delay: 0s;
+    }
+
+    &:hover:after {
+      background: blue;
+      transition-delay: 0.35s;
     }
   }
 `;

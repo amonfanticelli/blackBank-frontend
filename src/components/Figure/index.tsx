@@ -1,5 +1,5 @@
 import { ImgContainer, Image } from "./style";
-import loginAndRegisterImg from "../../img/man.svg";
+import loginAndRegisterImg from "../../img/girl.jpg";
 
 export const Img = () => {
   return (
