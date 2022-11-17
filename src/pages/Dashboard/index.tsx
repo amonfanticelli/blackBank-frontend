@@ -1,6 +1,7 @@
 import { Main } from "../../components/Main/style";
 import HeaderDashboard from "../../components/Header";
 import AsideDashboard from "../../components/Aside";
+import { SectionDashboard } from "../../components/Section";
 
 const Dashboard = () => {
   return (
@@ -8,6 +9,7 @@ const Dashboard = () => {
       <HeaderDashboard />
       <Main>
         <AsideDashboard />
+        <SectionDashboard />
       </Main>
     </>
   );

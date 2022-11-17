@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SubmitHandler } from "react-hook-form";
 import { UserProps, UserProviderData } from "../interfaces";
+import api from "../services/api";
 
 export const UserContext = createContext<UserProviderData>(
   {} as UserProviderData
