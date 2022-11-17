@@ -7,7 +7,7 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   input {
-    width: 90%;
+    width: 85%;
     height: 2.8rem;
     min-height: 1.5rem;
     padding-left: 1rem;

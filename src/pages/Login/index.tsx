@@ -9,13 +9,12 @@ import { loginSchema } from "../../schema/loginSchema";
 import { IUserLogin } from "../../interfaces";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IUserLogin>({
+  const { handleLogin } = useContext(UserContext);
+  const { register, handleSubmit } = useForm<IUserLogin>({
     resolver: yupResolver(loginSchema),
   });
 
@@ -27,14 +26,13 @@ const Login = () => {
       transition={{ duration: 0.4 }}
     >
       <Container>
-        <Form>
+        <Form onSubmit={handleSubmit(handleLogin)}>
           <MainTitle>NG CA$H</MainTitle>
           <Input
             id="username"
             placeholder="Digite aqui seu login"
             label="Login"
             {...register("username")}
-            error={errors?.username}
             type="text"
           />
           <Input
@@ -42,11 +40,10 @@ const Login = () => {
             placeholder="Digite aqui sua senha"
             label="Senha"
             {...register("password")}
-            error={errors?.password}
-            type="text"
+            type="password"
           />
 
-          <Button> Entrar</Button>
+          <Button type="submit"> Entrar</Button>
           <span>Ainda não possui uma conta? </span>
           <Link to="/register"> Cadastre-se</Link>
         </Form>
