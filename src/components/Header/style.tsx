@@ -26,8 +26,8 @@ export const Header = styled.header`
     transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
     user-select: none;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       transition: inherit;

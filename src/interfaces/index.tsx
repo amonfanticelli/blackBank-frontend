@@ -22,8 +22,12 @@ export interface ICreateTransaction {
 export interface IListTransctions {
   id?: string;
   value: number;
-  debitedAccount?: {};
-  creditedAccount?: {};
+  createdAt: Date;
+}
+
+export interface ITransactions {
+  id?: string;
+  value: number;
   createdAt: Date;
 }
 export interface IAccount {

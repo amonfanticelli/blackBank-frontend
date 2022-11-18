@@ -4,7 +4,7 @@ import { List } from "../List/style";
 const SectionDashboard = () => {
   return (
     <Section>
-      <h2>Minhas Finanças</h2>
+      <h2>Minhas Transações</h2>
       <div>
         <button>Listar finanças</button>
       </div>

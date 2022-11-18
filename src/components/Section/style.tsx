@@ -5,9 +5,12 @@ export const Section = styled.section`
   flex-direction: column;
   width: 50%;
   margin-left: 2rem;
+  padding: 1rem;
   border: 1px solid red;
 
   h2 {
+    display: flex;
+    justify-content: center;
   }
   div {
     display: flex;

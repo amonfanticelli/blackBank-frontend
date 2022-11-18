@@ -11,11 +11,11 @@ export const Container = styled.div`
     height: 2.8rem;
     min-height: 1.5rem;
     padding-left: 1rem;
-
-    background-color: var(--color-grey-2);
+    color: var(--color-white);
+    background-color: var(--color-black);
     border: 1.2182px solid #343b41;
     border-radius: 4px;
-
+    min-width: 12rem;
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;

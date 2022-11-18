@@ -19,5 +19,21 @@ export const List = styled.ul`
       margin-right: 0.875rem;
       border-radius: 4px 0px 0px 4px;
     }
+
+    h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 2rem;
+      color: #212529;
+      margin: 0;
+    }
+    span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 1.375rem;
+      color: #343a40;
+    }
   }
 `;

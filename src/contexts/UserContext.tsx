@@ -9,6 +9,7 @@ import {
   ICreateTransaction,
   IAccount,
   IListTransctions,
+  ITransactions,
 } from "../interfaces";
 import api from "../services/api";
 import jwt_decode from "jwt-decode";
@@ -19,6 +20,8 @@ export interface UserProviderData {
   handlePostTransaction: (data: ICreateTransaction) => void;
   handleGetAccountById: () => void;
   handleGetTransactions: () => void;
+  transaction: ITransactions[];
+  balance: IAccount;
 }
 
 export const UserContext = createContext<UserProviderData>(
@@ -27,8 +30,8 @@ export const UserContext = createContext<UserProviderData>(
 
 export const UserProvider = ({ children }: UserProps) => {
   const [login, setLogin] = useState<IUserLogin>();
-  const [balance, setBalance] = useState<IAccount>();
-  const [transaction, setTransaction] = useState<IListTransctions>();
+  const [balance, setBalance] = useState<IAccount>({} as IAccount);
+  const [transaction, setTransaction] = useState<ITransactions[]>([]);
 
   const accountCreated = () =>
     toast.success("Conta criada com sucesso!", { autoClose: 1000 });
@@ -69,7 +72,7 @@ export const UserProvider = ({ children }: UserProps) => {
           setLogin(response.data.user);
           window.localStorage.setItem("@token", token);
           window.localStorage.setItem("@userId", userId.sub);
-          navigate(`/dashboard/`);
+          navigate(`/dashboard`);
         }
       })
       .catch((err) => passwordOrEmailError());
@@ -106,11 +109,7 @@ export const UserProvider = ({ children }: UserProps) => {
     api
       .get(`/transactions`)
       .then((response) => {
-        const transactionData: IListTransctions = {
-          value: response.data.value,
-          createdAt: response.data.createdAt,
-        };
-        setTransaction(transactionData);
+        setTransaction(response.data);
       })
 
       .catch((err) => console.warn(err));
@@ -124,6 +123,8 @@ export const UserProvider = ({ children }: UserProps) => {
         handlePostTransaction,
         handleGetAccountById,
         handleGetTransactions,
+        transaction,
+        balance,
       }}
     >
       {children}
