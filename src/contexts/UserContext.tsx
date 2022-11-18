@@ -8,7 +8,6 @@ import {
   IUserLogin,
   ICreateTransaction,
   IAccount,
-  IListTransctions,
   ITransactions,
 } from "../interfaces";
 import api from "../services/api";
@@ -21,7 +20,8 @@ export interface UserProviderData {
   handleGetAccountById: () => void;
   handleGetTransactions: () => void;
   transaction: ITransactions[];
-  balance: IAccount;
+  account: IAccount;
+  logout: () => void;
 }
 
 export const UserContext = createContext<UserProviderData>(
@@ -30,7 +30,7 @@ export const UserContext = createContext<UserProviderData>(
 
 export const UserProvider = ({ children }: UserProps) => {
   const [login, setLogin] = useState<IUserLogin>();
-  const [balance, setBalance] = useState<IAccount>({} as IAccount);
+  const [account, setAccount] = useState<IAccount>({} as IAccount);
   const [transaction, setTransaction] = useState<ITransactions[]>([]);
 
   const accountCreated = () =>
@@ -43,10 +43,12 @@ export const UserProvider = ({ children }: UserProps) => {
     });
 
   const passwordOrEmailError = () =>
-    toast.error("Senha ou email incorreto!", { autoClose: 1000 });
+    toast.error("Senha ou usuário incorreto!", { autoClose: 1000 });
 
   const transactionCreated = () =>
     toast.success("Transação feita com sucesso!", { autoClose: 1000 });
+  const transactionError = () =>
+    toast.error("Transação mal sucedida!", { autoClose: 1000 });
 
   const navigate = useNavigate();
 
@@ -89,30 +91,40 @@ export const UserProvider = ({ children }: UserProps) => {
       .then((response) => {
         transactionCreated();
       })
-      .catch((err) => console.warn(err));
+      .catch((err) => transactionError());
   };
 
   const handleGetAccountById = () => {
+    const token = localStorage.getItem("@token");
+
     api
-      .get(`/accounts`)
+      .get(`/accounts`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
-        const userData = {
-          balance: response.data.balance,
-        };
-        setBalance(userData);
+        setAccount(response.data);
       })
 
       .catch((err) => console.warn(err));
   };
 
   const handleGetTransactions = () => {
+    const token = localStorage.getItem("@token");
     api
-      .get(`/transactions`)
+      .get(`/transactions`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => {
         setTransaction(response.data);
+        console.log(response.data);
       })
 
       .catch((err) => console.warn(err));
+  };
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -124,7 +136,8 @@ export const UserProvider = ({ children }: UserProps) => {
         handleGetAccountById,
         handleGetTransactions,
         transaction,
-        balance,
+        account,
+        logout,
       }}
     >
       {children}

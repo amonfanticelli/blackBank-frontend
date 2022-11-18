@@ -3,14 +3,20 @@ import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 
 const ListDashboard = () => {
-  const { transaction } = useContext(UserContext);
+  const { transaction, handleGetAccountById } = useContext(UserContext);
   return (
     <List>
       {transaction.map((transact) => (
         <li key={transact.id}>
           <div></div>
-          <h2>{transact.value}</h2>
-          <span>{transact.id}</span>
+          <h2>
+            {" "}
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(transact.value)}
+          </h2>
+          <span>{transact.createdAt}</span>
         </li>
       ))}
     </List>

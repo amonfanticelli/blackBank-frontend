@@ -4,9 +4,9 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin-left: 2rem;
   padding: 1rem;
-  border: 1px solid red;
+  box-shadow: 0px 4px 40px -10px rgb(0 0 0 / 25%);
+  border-radius: 4px;
 
   h2 {
     display: flex;
@@ -14,25 +14,22 @@ export const Section = styled.section`
   }
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1rem;
     align-items: center;
     height: 2.5rem;
     margin-bottom: 1rem;
     button {
       height: 2.5rem;
-
       background: var(--color-white);
       border: 1.4px solid #e9ecef;
       border-radius: 8px;
-      font-family: "Nunito";
       font-style: normal;
       font-weight: 600;
       font-size: 0.875rem;
       line-height: 1.188rem;
       text-align: center;
       color: #343a40;
-      cursor: pointer;
-      transition: 0.8s;
     }
   }
 

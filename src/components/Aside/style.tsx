@@ -34,6 +34,6 @@ export const TotalBalance = styled.span`
   width: 100%;
 
   span {
-    color: green;
+    color: var(--color-green);
   }
 `;

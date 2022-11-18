@@ -7,7 +7,6 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-
   width: 50%;
   height: 100%;
   /* min-height: 500px;

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  width: 100%;
+  width: calc(100% -6rem);
   height: 10vh;
   min-height: 5.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: var(--color-black);
+  padding-right: 6rem;
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
 
   img {
@@ -23,28 +24,14 @@ export const Header = styled.header`
     font-size: 1.4rem;
     color: var(--color-black);
     letter-spacing: 0.3rem;
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-    user-select: none;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      transition: inherit;
-      z-index: -1;
-    }
 
     &:hover {
-      color: red;
-      transition-delay: 0.5s;
-    }
-    &:hover:before {
-      transition-delay: 0s;
-    }
+      color: var(--color-red);
 
-    &:hover:after {
-      background: blue;
-      transition-delay: 0.35s;
+      transition: 0.8s;
     }
+  }
+  @media screen and (max-width: 1000px) {
+    width: calc(100% -6rem);
   }
 `;

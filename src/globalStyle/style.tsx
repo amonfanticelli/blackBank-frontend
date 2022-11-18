@@ -8,6 +8,9 @@ export default createGlobalStyle`
   --color-grey-1:rgba(134, 142, 150, 1);
   --color-black:rgba(0, 0, 0, 1);
   --color-white:rgba(255, 255, 255, 1) ;
+  --color-red: rgba(255, 0, 0, 1);
+  --color-green: rgba(46, 204, 113, 1);
+  
   
   /* Feedback Palette */
   --color-sucess:rgba(63, 232, 100, 1); 

@@ -7,6 +7,7 @@ export const Main = styled.main`
   background: var(--color-white);
   width: 100vw;
   height: 90vh;
+  margin: 0px;
   @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;

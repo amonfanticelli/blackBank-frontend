@@ -5,6 +5,7 @@ export const List = styled.ul`
   flex-direction: column;
   height: 100%;
   width: 100%;
+  overflow: auto;
   li {
     display: flex;
     height: 5.438rem;

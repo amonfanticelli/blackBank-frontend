@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { ICreateTransaction } from "../../interfaces";
 
 const AsideDashboard = () => {
-  const { handlePostTransaction, balance } = useContext(UserContext);
+  const { handlePostTransaction, account } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -41,7 +41,13 @@ const AsideDashboard = () => {
         <ButtonAside>Enviar Quantia</ButtonAside>
 
         <TotalBalance>
-          Saldo: <span>2</span>{" "}
+          Saldo:{" "}
+          <span>
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(account.balance)}
+          </span>{" "}
         </TotalBalance>
       </Form>
     </Aside>

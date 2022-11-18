@@ -1,14 +1,16 @@
 import { Section } from "./style";
-import { List } from "../List/style";
+import { ListDashboard } from "../List";
 
 const SectionDashboard = () => {
   return (
     <Section>
       <h2>Minhas Transações</h2>
       <div>
-        <button>Listar finanças</button>
+        <button>Todas Transações</button>
+        <button>Creditado</button>
+        <button>Debitado</button>
       </div>
-      <List />
+      <ListDashboard />
     </Section>
   );
 };

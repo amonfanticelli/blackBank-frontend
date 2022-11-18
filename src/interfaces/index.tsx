@@ -28,7 +28,7 @@ export interface IListTransctions {
 export interface ITransactions {
   id?: string;
   value: number;
-  createdAt: Date;
+  createdAt: string;
 }
 export interface IAccount {
   id?: string;
