@@ -91,6 +91,8 @@ export const UserProvider = ({ children }: UserProps) => {
 
       .then((response) => {
         transactionCreated();
+        handleGetTransactions();
+        handleGetAccountById();
       })
       .catch((err) => transactionError());
   };
