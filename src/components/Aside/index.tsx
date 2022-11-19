@@ -1,4 +1,10 @@
-import { Aside, ButtonAside, TitleAside, TotalBalance } from "./style";
+import {
+  Aside,
+  ButtonAside,
+  TitleAside,
+  TotalBalance,
+  FormDashboard,
+} from "./style";
 import { Form } from "../Form/style";
 import Input from "../Input";
 import { transactionSchema } from "../../schema/transactionSchema";
@@ -19,7 +25,7 @@ const AsideDashboard = () => {
   });
   return (
     <Aside>
-      <Form onSubmit={handleSubmit(handlePostTransaction)}>
+      <FormDashboard onSubmit={handleSubmit(handlePostTransaction)}>
         <TitleAside>Faça uma Transação</TitleAside>
         <Input
           id="usernameCredited"
@@ -49,7 +55,7 @@ const AsideDashboard = () => {
             }).format(account.balance)}
           </span>{" "}
         </TotalBalance>
-      </Form>
+      </FormDashboard>
     </Aside>
   );
 };

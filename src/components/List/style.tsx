@@ -7,6 +7,7 @@ export const List = styled.ul`
   width: 100%;
   overflow: auto;
   li {
+    position: relative;
     display: flex;
     height: 5.438rem;
     width: 100%;
@@ -30,6 +31,9 @@ export const List = styled.ul`
       margin: 0;
     }
     span {
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
       font-style: normal;
       font-weight: 400;
       font-size: 0.75rem;

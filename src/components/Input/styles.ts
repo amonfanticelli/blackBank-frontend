@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
   width: 100%;
+
   input {
     width: 85%;
     height: 2.8rem;
@@ -59,4 +60,7 @@ export const Error = styled.div`
       left: -7px;
     }
   }
+`;
+export const Label = styled.label`
+  width: 85%;
 `;

@@ -17,7 +17,7 @@ export const Form = styled.form`
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1000px) {
     width: 100%;
     padding: 0px;
   }

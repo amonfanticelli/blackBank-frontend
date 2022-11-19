@@ -29,6 +29,7 @@ export interface ITransactions {
   id?: string;
   value: number;
   createdAt: string;
+  type?: string;
 }
 export interface IAccount {
   id?: string;

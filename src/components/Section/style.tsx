@@ -15,7 +15,7 @@ export const Section = styled.section`
   div {
     display: flex;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
     height: 2.5rem;
     margin-bottom: 1rem;

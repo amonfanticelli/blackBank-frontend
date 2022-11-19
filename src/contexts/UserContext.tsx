@@ -22,6 +22,7 @@ export interface UserProviderData {
   transaction: ITransactions[];
   account: IAccount;
   logout: () => void;
+  setTransaction: React.Dispatch<React.SetStateAction<ITransactions[]>>;
 }
 
 export const UserContext = createContext<UserProviderData>(
@@ -37,12 +38,12 @@ export const UserProvider = ({ children }: UserProps) => {
     toast.success("Conta criada com sucesso!", { autoClose: 1000 });
 
   const accountError = () =>
-    toast.error("Ops! Email já cadastrado", {
+    toast.error("Ops! Usuário já cadastrado", {
       autoClose: 1000,
       position: "top-left",
     });
 
-  const passwordOrEmailError = () =>
+  const passwordOrUsernameError = () =>
     toast.error("Senha ou usuário incorreto!", { autoClose: 1000 });
 
   const transactionCreated = () =>
@@ -77,7 +78,7 @@ export const UserProvider = ({ children }: UserProps) => {
           navigate(`/dashboard`);
         }
       })
-      .catch((err) => passwordOrEmailError());
+      .catch((err) => passwordOrUsernameError());
   };
 
   const handlePostTransaction = (data: ICreateTransaction) => {
@@ -138,6 +139,7 @@ export const UserProvider = ({ children }: UserProps) => {
         transaction,
         account,
         logout,
+        setTransaction,
       }}
     >
       {children}

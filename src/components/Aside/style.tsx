@@ -3,13 +3,28 @@ import styled from "styled-components";
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 20%;
+  min-width: 200px;
+
   max-height: 20rem;
+  box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin-right: 3rem;
 
   @media screen and (max-width: 1000px) {
     width: 90%;
     margin: 0px;
   }
+`;
+
+export const FormDashboard = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px 20px;
+  gap: 0.8rem;
 `;
 
 export const ButtonAside = styled.button`
@@ -31,7 +46,9 @@ export const TitleAside = styled.h2`
 `;
 
 export const TotalBalance = styled.span`
-  width: 100%;
+  width: 85%;
+  display: flex;
+  justify-content: center;
 
   span {
     color: var(--color-green);

@@ -1,19 +1,26 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  width: calc(100% -6rem);
+  width: 100%;
   height: 10vh;
   min-height: 5.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: var(--color-black);
-  padding-right: 6rem;
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+`;
+
+export const ContainerHeader = styled.div`
+  width: 71%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   img {
-    min-width: 15.625rem;
-    width: 20%;
+    min-width: 6rem;
+    width: 7%;
     height: 100%;
   }
 
@@ -30,8 +37,5 @@ export const Header = styled.header`
 
       transition: 0.8s;
     }
-  }
-  @media screen and (max-width: 1000px) {
-    width: calc(100% -6rem);
   }
 `;
