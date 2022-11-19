@@ -1,13 +1,13 @@
-import { List } from "./style";
+import { List, ListItem } from "./style";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 
 const ListDashboard = () => {
-  const { transaction, handleGetAccountById } = useContext(UserContext);
+  const { transaction } = useContext(UserContext);
   return (
     <List>
       {transaction.map((transact) => (
-        <li key={transact.id}>
+        <ListItem type={transact.type} key={transact.id}>
           <div></div>
           <h2>
             {" "}
@@ -16,8 +16,8 @@ const ListDashboard = () => {
               currency: "BRL",
             }).format(transact.value)}
           </h2>
-          <span>{transact.createdAt}</span>
-        </li>
+          <span>{new Date(transact.createdAt).toLocaleString()}</span>
+        </ListItem>
       ))}
     </List>
   );

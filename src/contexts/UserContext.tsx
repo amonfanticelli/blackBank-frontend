@@ -18,7 +18,7 @@ export interface UserProviderData {
   handleLogin: (data: IUserLogin) => void;
   handlePostTransaction: (data: ICreateTransaction) => void;
   handleGetAccountById: () => void;
-  handleGetTransactions: () => void;
+  handleGetTransactions: (type?: string) => void;
   transaction: ITransactions[];
   account: IAccount;
   logout: () => void;
@@ -111,11 +111,12 @@ export const UserProvider = ({ children }: UserProps) => {
       .catch((err) => console.warn(err));
   };
 
-  const handleGetTransactions = () => {
+  const handleGetTransactions = (type?: string) => {
     const token = localStorage.getItem("@token");
     api
       .get(`/transactions`, {
         headers: { Authorization: `Bearer ${token}` },
+        params: { type },
       })
       .then((response) => {
         setTransaction(response.data);

@@ -21,6 +21,11 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.625rem;
+    ::-webkit-outer-spin-button,
+    ::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
   svg {
     position: absolute;
@@ -42,19 +47,20 @@ export const Error = styled.div`
   span {
     width: 155px;
     position: absolute;
-    background-color: #f10;
+    background-color: #ff7b7b;
     padding: 4px 15px;
     border-radius: 3px;
     left: 25px;
     top: -1px;
     opacity: 0;
     transition: opacity 0.4s;
+    z-index: 1;
     &::before {
       content: "";
       border-style: solid;
       border-width: 10px 7px 0 7px;
       transform: rotate(90deg);
-      border-color: #f10 transparent;
+      border-color: #ff7b7b transparent;
       position: absolute;
       top: 4px;
       left: -7px;

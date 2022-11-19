@@ -4,32 +4,23 @@ import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 
 const SectionDashboard = () => {
-  const { transaction, setTransaction } = useContext(UserContext);
-
-  const filterCredited = transaction.filter((transact) => {
-    return transact.type === "credited";
-  });
-
-  const filterDebited = transaction.filter((transact) => {
-    return transact.type === "debited";
-  });
-  const filterNone = transaction.filter((transact) => {
-    return transact;
-  });
+  const { handleGetTransactions } = useContext(UserContext);
 
   return (
     <Section>
       <h2>Minhas Transações</h2>
       <div>
-        <button onClick={() => setTransaction(filterNone)}>
+        <button onClick={() => handleGetTransactions()}>
           Todas Transações
         </button>
 
-        <button onClick={() => setTransaction(filterCredited)}>
+        <button onClick={() => handleGetTransactions("credited")}>
           Creditado
         </button>
 
-        <button onClick={() => setTransaction(filterDebited)}>Debitado</button>
+        <button onClick={() => handleGetTransactions("debited")}>
+          Debitado
+        </button>
       </div>
       <ListDashboard />
     </Section>
