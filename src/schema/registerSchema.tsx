@@ -7,5 +7,5 @@ export const registerSchema = yup.object().shape({
     .required("deve conter uma senha")
     .matches(/(\d)/, "deve conter ao menos 1 número")
     .matches(/[A-Z]/, "deve conter ao menos 1 letra maiúscula")
-    .min(8),
+    .min(8, "deve conter ao menos 8 caracteres"),
 });
