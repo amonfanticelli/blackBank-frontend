@@ -5,7 +5,7 @@ import {
   TotalBalance,
   FormDashboard,
 } from "./style";
-import Input from "../Input";
+import { Input } from "../Input";
 import { transactionSchema } from "../../schema/transactionSchema";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,7 +13,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import { ICreateTransaction } from "../../interfaces";
 
-const AsideDashboard = () => {
+export const AsideDashboard = () => {
   const { handlePostTransaction, account } = useContext(UserContext);
   const {
     register,
@@ -58,5 +58,3 @@ const AsideDashboard = () => {
     </Aside>
   );
 };
-
-export default AsideDashboard;

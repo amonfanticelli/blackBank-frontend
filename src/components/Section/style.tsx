@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 50%;
   padding: 1rem;
   box-shadow: 0px 4px 40px -10px rgb(0 0 0 / 25%);
@@ -11,6 +12,8 @@ export const Section = styled.section`
   h2 {
     display: flex;
     justify-content: center;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
   }
   div {
     display: flex;
@@ -30,11 +33,23 @@ export const Section = styled.section`
       line-height: 1.188rem;
       text-align: center;
       color: #343a40;
+      &:hover {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        transition: 0.8s;
+      }
     }
   }
 
   @media screen and (max-width: 1000px) {
     width: 90%;
-    margin: 0px;
+    margin-top: 1rem;
   }
+`;
+
+export const ImgDashboard = styled.img`
+  width: 57%;
+  margin-top: 1rem;
+  /* max-height: 200px;
+  min-width: 200px; */
 `;

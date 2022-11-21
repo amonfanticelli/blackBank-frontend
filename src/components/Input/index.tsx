@@ -11,7 +11,7 @@ interface InputProps {
   autoComplete?: string;
 }
 
-const Input = forwardRef(
+export const Input = forwardRef(
   (
     {
       id,
@@ -45,5 +45,3 @@ const Input = forwardRef(
     </>
   )
 );
-
-export default Input;

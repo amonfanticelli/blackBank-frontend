@@ -2,7 +2,7 @@ import { Container } from "../../components/Container/style";
 import { Form } from "../../components/Form/style";
 import { MainTitle, Button } from "./style";
 import { Img } from "../../components/Figure";
-import Input from "../../components/Input";
+import { Input } from "../../components/Input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "../../schema/registerSchema";

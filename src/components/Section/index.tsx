@@ -2,9 +2,11 @@ import { Section } from "./style";
 import { ListDashboard } from "../List";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
+import DashboarImg from "../../img/travel.svg";
+import { ImgDashboard } from "./style";
 
 const SectionDashboard = () => {
-  const { handleGetTransactions } = useContext(UserContext);
+  const { handleGetTransactions, transaction } = useContext(UserContext);
 
   return (
     <Section>
@@ -22,7 +24,16 @@ const SectionDashboard = () => {
           Debitado
         </button>
       </div>
-      <ListDashboard />
+      {!transaction.length ? (
+        <>
+          <h2>Você não possui nenhuma transação nessa aba</h2>
+          <ImgDashboard src={DashboarImg} alt="" />
+        </>
+      ) : (
+        <>
+          <ListDashboard />
+        </>
+      )}
     </Section>
   );
 };

@@ -12,12 +12,14 @@ export const ListItem = styled.li<{ type: string }>`
   position: relative;
   display: flex;
   height: 5.438rem;
+  min-height: 5.438rem;
   width: 100%;
   background: #f8f9fa;
   border-radius: 4px;
   margin-bottom: 2rem;
   div {
     height: 5.438rem;
+    min-height: 5.438rem;
     width: 0.25rem;
     background: ${({ type }) => (type === "credited" ? "#03b898" : "red")};
     margin-right: 0.875rem;

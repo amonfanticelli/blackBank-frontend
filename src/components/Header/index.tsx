@@ -3,7 +3,7 @@ import HeaderImg from "../../img/ng.jpg";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 
-const HeaderDashboard = () => {
+export const HeaderDashboard = () => {
   const { logout } = useContext(UserContext);
   return (
     <Header>
@@ -14,5 +14,3 @@ const HeaderDashboard = () => {
     </Header>
   );
 };
-
-export default HeaderDashboard;
