@@ -27,7 +27,7 @@ const Login = () => {
     >
       <Container>
         <Form onSubmit={handleSubmit(handleLogin)}>
-          <MainTitle>NG CA$H</MainTitle>
+          <MainTitle>Black Bank</MainTitle>
           <Input
             id="username"
             placeholder="Digite aqui seu login"

@@ -31,7 +31,7 @@ const Singup = () => {
     >
       <Container>
         <Form onSubmit={handleSubmit(handleRegister)}>
-          <MainTitle>NG CA$H</MainTitle>
+          <MainTitle>Black Bank</MainTitle>
           <Input
             id="username"
             placeholder="Digite seu nome de usuário"
