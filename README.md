@@ -2,7 +2,7 @@
 
 # Descrição da aplicação:
 
-Aplicação frontend que possibilita transações de crédito e débito entre usuários.
+Aplicação fullstack que possibilita transações de crédito e débito entre usuários.
 
 ## Tecnologias/ferramentas utilizadas na aplicação:
 
