@@ -1,8 +1,8 @@
-# Marvel Comic Books - Front end
+# Black Bank
 
 # Descrição da aplicação:
 
-Aplicação fullstack que possibilita transações de crédito e débito entre usuários.
+Aplicação frontend que possibilita transações de crédito e débito entre usuários.
 
 ## Tecnologias/ferramentas utilizadas na aplicação:
 
