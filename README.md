@@ -18,7 +18,7 @@ Aplicação fullstack que possibilita transações de crédito e débito entre u
 
 ## Antes de iniciar a aplicação, rode o seguinte comando para instalar as dependências:
 
-`yarn`
+`npm install`
 
 ## Preencha as váriaveis de ambiente:
 
@@ -26,6 +26,6 @@ Aplicação fullstack que possibilita transações de crédito e débito entre u
 
 ## Para inicializar a aplicação localmente, execute:
 
-`yarn start`
+`npm start`
 
 # Por ser um projeto FullStack é necessário estar com ambas as aplicações rodando. Esse é o link do repositório do BackEnd: https://github.com/amonfanticelli/blackBank-backend
