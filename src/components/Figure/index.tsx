@@ -1,5 +1,5 @@
 import { ImgContainer, Image } from "./style";
-import loginAndRegisterImg from "../../img/monochrome.svg";
+import loginAndRegisterImg from "../../assets/monochrome.svg";
 
 export const Img = () => {
   return (

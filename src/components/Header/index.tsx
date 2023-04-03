@@ -1,5 +1,4 @@
 import { Header, ContainerHeader } from "./style";
-import HeaderImg from "../../img/ng.jpg";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 
@@ -8,7 +7,7 @@ export const HeaderDashboard = () => {
   return (
     <Header>
       <ContainerHeader>
-        <img src={HeaderImg} alt="" />
+        <h1>Black Bank</h1>
         <button onClick={() => logout()}>Logout</button>
       </ContainerHeader>
     </Header>

@@ -2,7 +2,7 @@ import { Section } from "./style";
 import { ListDashboard } from "../List";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
-import DashboarImg from "../../img/travel.svg";
+import DashboardImg from "../../assets/travel.svg";
 import { ImgDashboard } from "./style";
 
 const SectionDashboard = () => {
@@ -27,7 +27,7 @@ const SectionDashboard = () => {
       {!transaction.length ? (
         <>
           <h2>Você não possui nenhuma transação nessa aba</h2>
-          <ImgDashboard src={DashboarImg} alt="" />
+          <ImgDashboard src={DashboardImg} alt="" />
         </>
       ) : (
         <>

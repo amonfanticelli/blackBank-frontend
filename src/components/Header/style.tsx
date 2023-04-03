@@ -18,10 +18,11 @@ export const ContainerHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  img {
-    min-width: 6rem;
-    width: 7%;
-    height: 100%;
+  h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: var(--font-inter);
   }
 
   button {
